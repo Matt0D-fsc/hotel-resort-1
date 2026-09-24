@@ -12,7 +12,7 @@
   const brand = `<a class="brand" href="index.html" aria-label="Mermaid Beach Resort, home"><img class="brand__mark" src="assets/logo-mark.svg" alt=""><span class="brand__text">Mermaid<small>BEACH RESORT</small></span></a>`;
 
   root.innerHTML = `${brand}<nav class="desktop-nav" aria-label="Main navigation">${navLinks}</nav><div class="header-actions"><a class="button header-book" href="book.html">Request a stay <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span>Menu</span><span class="menu-toggle__lines"><span></span><span></span></span></button></div>`;
-  const hasVisualHero = Boolean(document.querySelector(".hero__sticky,.page-hero"));
+  const hasVisualHero = Boolean(document.querySelector(".hero__sticky"));
   root.classList.add("site-header");
   if (hasVisualHero) root.classList.add("is-hero");
   root.insertAdjacentHTML("afterend", `<div id="mobile-menu" class="mobile-menu"><nav aria-label="Mobile navigation"><a href="index.html">Home</a>${navLinks}<a href="book.html">Request a stay</a></nav><div class="mobile-menu__foot">Pechardwip, Marine Drive Road, Cox's Bazar<br><a href="tel:+8801841416467">+880 1841 416467</a></div></div><a class="button button--dark mobile-book" href="book.html">Plan your stay <span aria-hidden="true">↗</span></a><div class="scroll-progress" aria-hidden="true"></div>`);
@@ -41,7 +41,7 @@
     ticking = true;
     requestAnimationFrame(() => {
       const y = window.scrollY;
-      const isHero = hasVisualHero && y < Math.max(80, (document.querySelector(".hero__sticky,.page-hero")?.offsetHeight || 0) - 100);
+      const isHero = hasVisualHero && y < Math.max(80, (document.querySelector(".hero__sticky")?.offsetHeight || 0) - 100);
       root.classList.toggle("is-hero", isHero && !menu.classList.contains("is-open"));
       root.classList.toggle("is-solid", y > 48 || menu.classList.contains("is-open"));
       if (Math.abs(y - previousScroll) > 6 && y > 250 && !menu.classList.contains("is-open")) {
@@ -92,7 +92,7 @@
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reduceMotion && window.Lenis && innerWidth >= 801) {
     // Requested Lenis integration; one RAF from GSAP's ticker, never a second RAF loop.
-    window.siteLenis = new Lenis({ lerp: .1, smoothWheel: true, wheelMultiplier: 1, autoRaf: false });
+    window.siteLenis = new Lenis({ lerp: .165, smoothWheel: true, wheelMultiplier: 1.25, autoRaf: false });
     if (window.ScrollTrigger) window.siteLenis.on("scroll", ScrollTrigger.update);
     if (window.gsap) {
       gsap.ticker.add((time) => window.siteLenis.raf(time * 1000));

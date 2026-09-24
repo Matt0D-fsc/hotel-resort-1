@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* The Tide Ledger — Da Maria Roma's editorial grid as the base language. */
+html{scroll-padding-top:84px}
+body{background:var(--color-secondary);overflow-x:clip}
+body::before{content:"";position:fixed;z-index:160;inset:0;pointer-events:none;opacity:.12;background-image:radial-gradient(rgba(23,52,60,.24) .55px,transparent .6px);background-size:5px 5px;mix-blend-mode:multiply}
+body.menu-open::before{display:none}
+.serif,.display em{font-family:var(--font-serif);font-style:italic;font-weight:500}
+.eyebrow{letter-spacing:.2em}
+.ink-rule{border-top:1px solid currentColor;border-bottom:1px solid currentColor}
+.ink-rule{position:relative;border-color:transparent}
+.ink-rule::before,.ink-rule::after{content:"";position:absolute;left:0;right:0;height:1px;background:currentColor;transform:scaleX(0) translateX(3rem);transform-origin:left center;transition:transform .8s cubic-bezier(.25,.46,.45,.94)}
+.ink-rule::before{top:0}.ink-rule::after{bottom:0}
+.ink-rule.is-drawn::before,.ink-rule.is-drawn::after{transform:scaleX(1) translateX(0)}
+.editorial-link{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;min-width:210px;padding:13px 0;border-top:1px solid currentColor;border-bottom:1px solid currentColor;font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.12em;transition:padding .35s var(--expo-out)}
+.editorial-link:hover{padding-left:12px;padding-right:12px}
+.editorial-link span{font-size:25px;font-weight:400}
+
+/* Fixed press masthead and typographic mobile navigation. */
+.site-header,.site-header.is-hero,.site-header.is-solid{height:77px;color:var(--color-primary);background:rgba(244,237,224,.94);border-bottom:1px solid rgba(23,52,60,.35);box-shadow:none;backdrop-filter:blur(15px)}
+.site-header.is-hero .brand__mark{filter:none}
+.site-header.is-hidden{transform:translateY(-110%)}
+.brand__mark{width:42px;height:42px}
+.brand__text{font-family:var(--font-serif);font-size:29px;font-weight:600;letter-spacing:-.065em}
+.brand__text small{font-family:"Barlow Condensed",sans-serif;letter-spacing:.26em;font-size:8px;margin-top:8px}
+.desktop-nav a{font-family:"Barlow Condensed",sans-serif;font-size:14px;letter-spacing:.11em}
+.header-book,.site-header.is-solid .header-book{background:var(--color-tertiary);border-color:var(--color-tertiary);color:var(--color-white);border-radius:0;min-height:47px;font-family:"Barlow Condensed",sans-serif;font-size:15px;letter-spacing:.1em;padding:12px 20px}
+.header-book:hover,.site-header.is-solid .header-book:hover{background:var(--color-primary);border-color:var(--color-primary)}
+.mobile-menu{background:var(--color-primary)}
+.mobile-menu nav a{font-family:var(--font-serif);font-size:clamp(40px,11vw,79px);font-weight:500;letter-spacing:-.055em}
+.menu-open .site-header,.menu-open .site-header.is-hero{background:var(--color-primary);color:var(--color-white)}
+.menu-open .brand__mark{filter:brightness(0) invert(1)!important}
+.mobile-book{border-radius:0;background:var(--color-tertiary);border-color:var(--color-tertiary);font-family:"Barlow Condensed",sans-serif;font-size:16px;letter-spacing:.13em}
+.scroll-progress{height:3px;background:var(--color-tertiary)}
+
+/* 01 / Printed front cover — Da Maria §01 with a Krem Kanel M02 tide edge. */
+.cover{padding:116px var(--space-edge) 25px;color:var(--color-primary);min-height:100svh}
+.cover__issue,.cover__foot,.invitation__top,.folios__intro>.ink-rule,.field-notes__header,.table-story__meta,.days__top,.closing-ticket__top{display:flex;justify-content:space-between;gap:20px;padding:11px 0;font-family:"Barlow Condensed",sans-serif;font-size:13px;line-height:1.2;font-weight:700;letter-spacing:.14em}
+.cover__masthead{position:relative;display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:20px;padding:28px 0 22px}
+.cover__masthead h1{font-family:var(--font-serif);font-size:clamp(110px,17vw,300px);font-weight:600;line-height:.78;letter-spacing:-.095em;white-space:nowrap;margin:0;text-align:center}
+.cover__char{display:inline-block}
+.cover__char:last-child{color:var(--color-tertiary)}
+.edition-word{display:inline-block;white-space:nowrap}
+.edition-char{display:inline-block}
+.cover__aside,.cover__edition{font-family:"Barlow Condensed",sans-serif;font-size:13px;line-height:1.25;font-weight:700;letter-spacing:.1em;padding-bottom:12px}
+.cover__edition{text-align:right}
+.cover__imageframe{position:relative;height:clamp(470px,59svh,780px);overflow:hidden;background:var(--color-primary)}
+.cover__imageframe>img{width:100%;height:100%;object-fit:cover;object-position:center 56%;filter:saturate(.89)}
+.cover__imageframe::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,25,29,.36),transparent 48%);pointer-events:none}
+.cover__image-note{position:absolute;z-index:2;left:30px;bottom:72px;background:var(--color-primary);color:var(--color-white);width:min(285px,44vw);padding:19px 20px}
+.cover__image-note span,.cover__seal small{font-family:"Barlow Condensed",sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em}
+.cover__image-note p{font-family:var(--font-serif);font-size:clamp(22px,2.1vw,32px);line-height:1.05;margin:14px 0 0}
+.cover__seal{position:absolute;z-index:3;right:5%;top:8%;display:flex;flex-direction:column;align-items:center;justify-content:center;width:clamp(115px,13vw,200px);aspect-ratio:1;background:var(--color-tertiary);color:var(--color-white);border-radius:50%;border:1px solid var(--color-white);outline:5px solid var(--color-tertiary);transform:rotate(11deg);text-align:center;box-shadow:0 9px 25px rgba(0,0,0,.15)}
+.cover__seal>span{font-family:"Barlow Condensed",sans-serif;font-size:clamp(20px,2.5vw,37px);font-weight:800;line-height:.86;letter-spacing:.02em}
+.cover__seal small{font-size:9px;margin-top:10px}
+.cover__tide{position:absolute;z-index:2;left:0;right:0;bottom:-1px;width:100%;height:clamp(55px,9vw,130px);fill:var(--color-secondary);transform-origin:center bottom}
+.cover__foot{border-top:0;margin-top:0;align-items:center;min-height:102px}
+.cover__foot p{font-family:var(--font-serif);font-size:clamp(19px,2vw,28px);font-weight:500;letter-spacing:-.03em;max-width:18ch;margin:0}
+.cover__foot .editorial-link{font-size:16px}
+.cover__scroll{align-self:end;padding-bottom:9px}
+.ink-marquee{overflow:hidden;background:var(--color-tertiary);color:var(--color-white);border-top:1px solid var(--color-primary);border-bottom:1px solid var(--color-primary);padding:10px 0 7px}
+.ink-marquee__track,.table-story__marquee{display:flex;width:max-content;white-space:nowrap;animation:ledger-marquee 40s linear infinite}
+.ink-marquee__track span{font-family:"Barlow Condensed",sans-serif;font-size:clamp(58px,8vw,122px);font-weight:700;letter-spacing:.025em;line-height:.86}
+@keyframes ledger-marquee{to{transform:translateX(-50%)}}
+
+/* 02 / Editorial invitation and the evolving hours — Da Maria §03 + Flor M02. */
+.invitation{position:relative;padding:clamp(100px,13vw,210px) var(--space-edge) clamp(120px,16vw,250px);overflow:hidden}
+.invitation__grid{display:grid;grid-template-columns:1fr 2.5fr;gap:5vw;padding-top:8vw}
+.invitation__margin{font-family:"Barlow Condensed",sans-serif;font-weight:700;letter-spacing:.15em;font-size:13px}
+.margin-number{font-family:var(--font-serif);font-size:clamp(110px,12vw,200px);font-style:italic;line-height:.7;letter-spacing:-.13em;color:var(--color-tertiary)}
+.invitation__margin p{margin-top:50px;line-height:1.35}
+.invitation h2{font-family:var(--font-serif);font-size:clamp(54px,6.2vw,103px);line-height:1.07;letter-spacing:-.068em;font-weight:500;margin:0;max-width:16ch}
+.invitation h2 em{color:var(--color-tertiary);font-weight:500}
+.invitation__body{font-size:clamp(16px,1.5vw,21px);line-height:1.7;max-width:33ch;margin:35px 0 0 auto}
+.invitation__photo{width:min(47%,690px);margin:clamp(70px,9vw,140px) 2% 0 auto;position:relative}
+.invitation__photo img{height:clamp(380px,52vw,700px);width:100%;object-fit:cover}
+.invitation__photo figcaption,.field-notes figcaption{font-family:"Barlow Condensed",sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;margin-top:14px}
+.invitation__scribble{font-family:var(--font-serif);font-style:italic;color:var(--color-tertiary);font-size:clamp(40px,5vw,75px);position:absolute;left:15%;bottom:25%;transform:rotate(-10deg)}
+.day-cycle{height:320svh;position:relative;background:var(--color-primary);color:var(--color-white)}
+.day-cycle__sticky{position:sticky;top:0;height:100svh;overflow:hidden}
+.day-cycle__media,.day-cycle__wash,.day-cycle__image{position:absolute;inset:0;width:100%;height:100%}
+.day-cycle__image{object-fit:cover;opacity:0;filter:saturate(.78)}
+.day-cycle__image.is-first{opacity:1}
+.day-cycle__image:first-child{object-position:center 56%}
+.day-cycle__wash{background:linear-gradient(90deg,rgba(10,30,36,.62),rgba(10,30,36,.08) 65%),linear-gradient(0deg,rgba(10,30,36,.45),transparent 40%)}
+.day-cycle__inner{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:110px var(--space-edge) 40px}
+.day-cycle__meta,.day-cycle__rail{display:flex;justify-content:space-between;gap:20px;font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;letter-spacing:.15em}
+.day-cycle__meta{border-top:1px solid var(--color-white);padding-top:12px}
+.day-cycle__stories{position:relative;min-height:55vh}
+.day-cycle__story{position:absolute;inset:auto 0 0;opacity:0}
+.day-cycle__story.is-first{opacity:1}
+.day-cycle__story>span{font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:700;letter-spacing:.15em}
+.day-cycle__story h2{font-family:var(--font-serif);font-size:clamp(100px,13vw,210px);font-weight:500;line-height:.85;letter-spacing:-.09em;margin:15px 0 25px}
+.day-cycle__story h2 em{color:#f8d7ac}
+.day-cycle__story p{font-size:clamp(16px,1.5vw,22px);line-height:1.5;max-width:25ch}
+.day-cycle__rail{align-items:center}
+.day-cycle__progress{height:1px;flex:1;background:rgba(255,250,241,.4);position:relative}
+.day-cycle__progress i{display:block;width:0;height:3px;background:var(--color-white);position:absolute;top:-1px;left:0}
+
+/* 03 / Villa folios — HORECA Social M03 translated into physical stay cards. */
+.folios{padding:150px var(--space-edge) 100px;background:var(--color-secondary)}
+.folios__head{display:grid;grid-template-columns:minmax(0,2fr) minmax(240px,.55fr);gap:7vw;align-items:end;padding:8vw 0 110px}
+.folios__head h2,.field-notes h2,.table-story h2,.days h2,.closing-ticket h2{font-family:var(--font-serif);font-size:clamp(76px,10vw,160px);line-height:.88;letter-spacing:-.09em;font-weight:500;margin:0}
+.folios__head h2 em{color:var(--color-tertiary)}
+.folios__head p{font-size:18px;line-height:1.6;max-width:27ch;padding-bottom:12px}
+.folios__track{perspective:1400px;position:relative}
+.folio{position:sticky;top:10vh;min-height:80svh;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,5vw,80px);padding:clamp(28px,4vw,68px);overflow:hidden;margin-bottom:52svh;border:1px solid var(--color-primary);transform-origin:center top;box-shadow:0 20px 40px rgba(15,37,42,.12)}
+.folio:last-child{margin-bottom:0}
+.folio--sea{background:#a9cbc2}
+.folio--grove{background:#e7c89b}
+.folio--water{background:#ca7e65}
+.folio__text{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start}
+.folio__number,.folio__bottom,.folio__photo>span{font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:700;letter-spacing:.16em}
+.folio__number{padding:9px 0;border-top:1px solid currentColor;border-bottom:1px solid currentColor;width:100%}
+.folio h3{font-family:var(--font-serif);font-size:clamp(82px,8.2vw,144px);line-height:.84;letter-spacing:-.095em;font-weight:500;margin:clamp(55px,7vw,120px) 0 24px}
+.folio__text>p{font-size:clamp(17px,1.5vw,22px);line-height:1.5;max-width:27ch;margin:0 0 auto}
+.folio__bottom{border-top:1px solid currentColor;margin-top:30px;padding-top:14px;display:flex;align-items:center;justify-content:space-between;width:100%}
+.folio__arrow{width:54px;height:54px;border:1px solid currentColor;display:grid;place-items:center;font-family:var(--font-sans);font-size:31px;font-weight:400;line-height:1;transition:background .3s,color .3s,transform .3s}
+.folio__arrow:hover{background:var(--color-primary);color:var(--color-white);transform:rotate(45deg)}
+.folio__photo{align-self:stretch;position:relative;min-height:55svh;overflow:hidden}
+.folio__photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 1.2s var(--expo-out)}
+.folio:hover .folio__photo img{transform:scale(1.05)}
+.folio__photo>span{position:absolute;bottom:12px;left:15px;right:15px;color:var(--color-white);text-shadow:0 1px 6px #000}
+.folio__watermark{position:absolute;right:-.02em;bottom:-.38em;font-family:var(--font-serif);font-size:clamp(160px,24vw,400px);letter-spacing:-.13em;color:rgba(23,52,60,.08);pointer-events:none}
+.folios__outro{padding-top:85px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.folios__outro>span{font-family:"Barlow Condensed",sans-serif;font-size:14px;letter-spacing:.12em}
+
+/* 04 / A collected, uneven field journal — Da Maria §03. */
+.field-notes{padding:160px var(--space-edge) 200px;background:var(--color-primary);color:var(--color-white);overflow:hidden}
+.field-notes__grid{position:relative;display:grid;grid-template-columns:1.2fr .8fr .85fr;gap:4vw;padding-top:9vw;align-items:start}
+.field-notes__heading{grid-column:1;position:relative;z-index:2}
+.field-notes h2{font-size:clamp(73px,8vw,125px)}
+.field-notes h2 em{color:#dfac8e}
+.field-notes__heading p{font-size:clamp(17px,1.5vw,22px);line-height:1.65;max-width:28ch;margin:45px 0 50px}
+.field-notes__image{margin:0;position:relative}
+.field-notes__image--a{grid-column:2;margin-top:10vw;transform:rotate(3deg)}
+.field-notes__image--b{grid-column:3;margin-top:26vw;transform:rotate(-5deg)}
+.field-notes__image img{width:100%;height:clamp(320px,37vw,580px);object-fit:cover;border:9px solid var(--color-white)}
+.field-notes__image--b img{height:clamp(240px,28vw,420px)}
+.field-notes__stamp{position:absolute;left:22%;bottom:-5%;width:175px;height:175px;border:2px dashed #dfac8e;border-radius:50%;color:#dfac8e;font-family:"Barlow Condensed",sans-serif;font-size:37px;font-weight:800;line-height:.82;display:grid;place-items:center;text-align:center;transform:rotate(-18deg)}
+
+/* 05 / The long signature table story — Da Maria §04. */
+.table-story{position:relative;background:#d78b69;color:var(--color-primary);padding:120px var(--space-edge) 0;overflow:hidden}
+.table-story__layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:5vw;align-items:center;min-height:92svh;padding:7vw 0 9vw}
+.table-story h2{font-size:clamp(100px,12vw,190px)}
+.table-story p{font-size:clamp(18px,1.7vw,24px);line-height:1.5;max-width:22ch;margin:35px 0 45px}
+.table-story__media{height:min(70svh,720px);position:relative;transform:rotate(3deg);border:10px solid var(--color-secondary);box-shadow:25px 32px 0 rgba(23,52,60,.17)}
+.table-story__media img{width:100%;height:100%;object-fit:cover}
+.table-story__media span{position:absolute;bottom:12px;left:15px;color:var(--color-white);font-family:"Barlow Condensed",sans-serif;font-size:16px;font-weight:700;letter-spacing:.15em;text-shadow:0 2px 7px #000}
+.table-story__marquee{border-top:1px solid currentColor;padding:20px 0 4px;animation-duration:40s}
+.table-story__marquee span{font-family:var(--font-serif);font-style:italic;font-size:clamp(80px,11vw,170px);line-height:.95;letter-spacing:-.08em}
+
+/* 06 / Postcards from the resort. */
+.days{padding:150px var(--space-edge) 170px;background:var(--color-secondary)}
+.days__intro{display:flex;align-items:end;justify-content:space-between;gap:40px;padding:8vw 0 90px}
+.days h2{font-size:clamp(84px,10vw,160px)}
+.days h2 em{color:var(--color-tertiary)}
+.days__intro p{font-size:19px;line-height:1.5;max-width:23ch;margin:0 2vw 10px 0}
+.days__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,30px);align-items:start}
+.day-card:nth-child(2){margin-top:105px}.day-card:nth-child(3){margin-top:45px}
+.day-card__image{height:clamp(330px,39vw,580px);overflow:hidden;background:var(--color-leisure)}
+.day-card__image img{height:100%;width:100%;object-fit:cover;transition:transform 1.2s var(--expo-out),filter 1.2s}
+.day-card:hover img{transform:scale(1.08);filter:saturate(1.2)}
+.day-card>span{display:block;border-top:1px solid currentColor;margin-top:14px;padding-top:12px;font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;letter-spacing:.14em}
+.day-card h3{font-family:var(--font-serif);font-size:clamp(37px,3.6vw,60px);line-height:1.03;letter-spacing:-.05em;font-weight:500;margin:20px 0;display:flex;justify-content:space-between;gap:10px}
+.day-card h3 b{font-family:var(--font-sans);font-size:25px;font-weight:400}
+
+/* 07 / A decisive reservation spread and footer. */
+.closing-ticket{background:var(--color-tertiary);color:var(--color-white);padding:80px var(--space-edge) 35px;min-height:80svh;display:flex;flex-direction:column;justify-content:space-between}
+.closing-ticket__main{display:flex;justify-content:space-between;align-items:end;gap:40px;padding:80px 0 90px}
+.closing-ticket h2{font-size:clamp(90px,13vw,205px);line-height:.84}
+.closing-ticket p{font-size:clamp(19px,1.8vw,28px);line-height:1.5;max-width:27ch;margin:40px 0 0}
+.closing-ticket__star{display:block;font-size:60px;line-height:1;margin-bottom:25px}
+.closing-ticket__cta{min-width:clamp(230px,26vw,400px);aspect-ratio:1;display:flex;align-items:center;justify-content:space-between;gap:15px;background:var(--color-primary);color:var(--color-white);border-radius:50%;padding:8%;font-family:"Barlow Condensed",sans-serif;font-size:clamp(33px,4vw,64px);font-weight:700;line-height:.87;letter-spacing:-.02em;transform:rotate(8deg);transition:transform .6s var(--expo-out),background .4s}
+.closing-ticket__cta:hover{transform:rotate(-5deg) scale(1.05);background:#052b32}
+.closing-ticket__cta b{font-family:var(--font-sans);font-size:clamp(28px,3vw,50px);font-weight:400;align-self:flex-end}
+.closing-ticket__bottom{display:flex;justify-content:space-between;gap:20px;border-top:1px solid currentColor;padding-top:18px;font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:700;letter-spacing:.14em}
+.site-footer{background:var(--color-primary);padding-top:110px}
+.site-footer .footer-brand{font-family:var(--font-serif);font-style:italic;font-weight:500;font-size:clamp(77px,9vw,150px)}
+.site-footer h3,.footer-bottom{font-family:"Barlow Condensed",sans-serif;letter-spacing:.12em}
+
+/* Inner pages: each opens as a cover spread, then becomes a measured journal. */
+.page-hero,.page-hero--short{display:flex;flex-direction:column;align-items:stretch;min-height:0;padding:130px 0 0;background:var(--color-secondary);color:var(--color-primary);overflow:visible}
+.page-hero__shade{display:none}
+.page-hero__content.container{order:1;position:relative;padding:0 0 35px;width:min(100% - 2*var(--space-edge),1540px)}
+.page-hero__content>.eyebrow{display:block;border-top:1px solid currentColor;border-bottom:1px solid currentColor;padding:10px 0;font-family:"Barlow Condensed",sans-serif;font-size:16px;letter-spacing:.15em}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(90px,11vw,170px);font-weight:600;letter-spacing:-.09em;line-height:.85;max-width:100%;margin:55px 0 65px}
+.page-hero h1 em{color:var(--color-tertiary)}
+.page-hero__bottom{border-top:1px solid currentColor;padding-top:17px;margin:0;align-items:start}
+.page-hero__bottom p{font-size:16px;max-width:27ch}
+.page-hero__media{order:2;position:relative;width:min(100% - 2*var(--space-edge),1540px);height:clamp(430px,60svh,780px);margin:0 auto;inset:auto;object-fit:cover;filter:saturate(.87)}
+.editorial-intro{padding-top:clamp(120px,12vw,190px);padding-bottom:clamp(120px,12vw,190px);border-bottom:1px solid rgba(23,52,60,.3)}
+.editorial-intro>.eyebrow{font-family:"Barlow Condensed",sans-serif;font-size:16px}
+.editorial-intro p{font-family:var(--font-serif);font-size:clamp(43px,5.2vw,82px);letter-spacing:-.06em;line-height:1.12}
+.editorial-intro p .serif{color:var(--color-tertiary)}
+.section-topline .display,.two-col__copy .display{font-family:var(--font-serif);font-size:clamp(64px,7.5vw,120px);letter-spacing:-.08em;line-height:.93}
+.section-topline .display em,.two-col__copy .display em{color:var(--color-tertiary)}
+.page-section{padding:clamp(110px,12vw,190px) 0}
+.page-section--light{background:var(--color-secondary)}
+.page-section--dark{background:var(--color-primary)}
+.two-col__image{border:9px solid var(--color-white);box-shadow:22px 26px 0 rgba(23,52,60,.13)}
+.two-col__copy>.eyebrow{display:block;border-top:1px solid currentColor;padding-top:12px}
+.two-col__copy p{font-size:18px}
+.feature-meta{font-family:"Barlow Condensed",sans-serif;font-size:14px;letter-spacing:.12em}
+.story-grid figure:nth-child(even){margin-top:150px}
+.story-grid img{border:8px solid var(--color-white)}
+.editorial-quote{background:#d78b69;color:var(--color-primary)}
+.editorial-quote p{font-size:clamp(65px,9vw,145px)}
+.filter-row button{border-radius:0;font-family:"Barlow Condensed",sans-serif;font-size:15px;padding:12px 18px}
+.filter-row button:hover,.filter-row button.is-active{background:var(--color-tertiary);border-color:var(--color-tertiary);color:var(--color-white)}
+.stay-list{gap:0}
+.stay-entry{border-top:1px solid var(--color-primary);padding:80px 0;grid-template-columns:1fr 1fr}
+.stay-entry__media img{aspect-ratio:6/5}
+.stay-entry__media span{font-family:"Barlow Condensed",sans-serif;background:var(--color-tertiary);padding:6px 9px;font-size:16px}
+.stay-entry__copy h2{font-family:var(--font-serif);font-size:clamp(65px,7vw,110px);letter-spacing:-.08em}
+.stay-entry__copy h2 em{color:var(--color-tertiary)}
+.stay-entry__details span{border-radius:0;font-family:"Barlow Condensed",sans-serif;font-size:15px}
+.stay-entry__price{font-family:var(--font-serif);font-size:40px}
+.stay-entry__price small{font-family:"Barlow Condensed",sans-serif;font-size:14px}
+.button,.button--dark{border-radius:0;font-family:"Barlow Condensed",sans-serif;font-size:16px;letter-spacing:.12em}
+.button--dark{background:var(--color-primary)}
+.button--dark:hover{background:var(--color-tertiary);border-color:var(--color-tertiary)}
+.package-card{background:var(--color-secondary)}
+.package-card h3{font-family:var(--font-serif)}
+.numbered-list li{font-family:var(--font-serif);font-size:clamp(35px,4vw,65px)}
+.numbered-list li small{font-family:"Barlow Condensed",sans-serif;font-size:17px}
+.footer-cta{background:var(--color-tertiary);color:var(--color-white)}
+.footer-cta h2{font-family:var(--font-serif);font-size:clamp(75px,10vw,155px);letter-spacing:-.08em}
+.footer-cta .button{background:var(--color-primary);border-color:var(--color-primary)}
+
+/* The reservation form is drawn as a numbered travel document. */
+.booking-page{background:var(--color-secondary)}
+.booking-shell{padding-top:160px}
+.booking-head{border-top:1px solid currentColor;padding-top:15px}
+.booking-head>.eyebrow{font-family:"Barlow Condensed",sans-serif;font-size:16px}
+.booking-head h1{font-family:var(--font-serif);font-size:clamp(78px,9vw,138px);font-weight:600;letter-spacing:-.09em;line-height:.87}
+.booking-head h1 em{color:var(--color-tertiary)}
+.booking-head p{font-size:19px}
+.booking-form{gap:70px}
+.form-step{border-color:var(--color-primary)}
+.form-step__head{gap:20px;align-items:start}
+.form-step__head>span{font-family:"Barlow Condensed",sans-serif;font-size:32px;color:var(--color-tertiary);line-height:1}
+.form-step__head h2{font-family:var(--font-serif);font-size:clamp(43px,5vw,75px);letter-spacing:-.07em}
+.field label{font-family:"Barlow Condensed",sans-serif;font-size:16px;letter-spacing:.13em}
+.field input,.field select,.field textarea{background:transparent;border:0;border-bottom:1px solid var(--color-primary);padding:15px 0;min-height:57px;color:var(--color-primary)}
+.field input:focus,.field select:focus,.field textarea:focus{box-shadow:none;border-bottom:2px solid var(--color-tertiary)}
+.booking-summary{top:110px;background:var(--color-primary);border:10px solid var(--color-secondary);outline:1px solid var(--color-primary);padding:clamp(25px,2.8vw,45px);box-shadow:20px 25px 0 rgba(23,52,60,.12)}
+.booking-summary>.eyebrow{font-family:"Barlow Condensed",sans-serif;font-size:17px;color:#efb48b}
+.booking-summary h2{font-family:var(--font-serif);font-size:clamp(45px,4.6vw,72px);letter-spacing:-.07em}
+.summary-line{font-family:"Barlow Condensed",sans-serif;font-size:17px;letter-spacing:.04em}
+.summary-total{font-family:var(--font-serif);color:#efb48b;font-size:47px}
+.booking-submit{background:var(--color-tertiary);border-color:var(--color-tertiary)}
+
+@media(max-width:1050px){
+  .cover__masthead h1{font-size:17vw}.cover__aside,.cover__edition{font-size:11px}
+  .folio{min-height:72svh}.folio h3{font-size:8vw}
+  .field-notes__grid{grid-template-columns:1fr 1fr}.field-notes__heading{grid-column:1/-1}.field-notes__image--a{grid-column:1;margin-top:0}.field-notes__image--b{grid-column:2;margin-top:100px}.field-notes__stamp{left:auto;right:12%;bottom:0}
+}
+@media(max-width:800px){
+  .site-header,.site-header.is-hero,.site-header.is-solid{height:70px}
+  .cover{padding-top:99px}.cover__issue span:nth-child(2){display:none}
+  .cover__masthead{grid-template-columns:1fr auto}.cover__masthead h1{grid-column:1/-1;grid-row:1;font-size:17.4vw}.cover__aside{grid-row:2}.cover__edition{grid-row:2}
+  .cover__imageframe{height:65svh}.cover__foot .cover__scroll{display:none}
+  .invitation__grid{grid-template-columns:1fr 2.5fr}.invitation__photo{width:60%}
+  .folios__head{grid-template-columns:1fr;padding-bottom:70px}.folios__head p{margin-left:auto}
+  .folio{grid-template-columns:1fr 1fr;padding:30px;gap:24px}.folio h3{font-size:9vw}
+  .table-story__layout{grid-template-columns:1fr 1fr}.table-story h2{font-size:11vw}
+  .days__grid{grid-template-columns:1fr 1fr}.day-card:nth-child(3){margin-top:0}
+  .closing-ticket__main{align-items:center}.closing-ticket__cta{min-width:220px}
+}
+@media(max-width:600px){
+  .mobile-book{left:auto;right:14px;bottom:14px;transform:none;width:78px;height:78px;min-height:0;border:1px solid var(--color-white);outline:3px solid var(--color-tertiary);background:var(--color-tertiary);border-radius:50%;padding:15px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0;font-family:"Barlow Condensed",sans-serif;font-size:17px;line-height:.85;letter-spacing:.01em;text-transform:uppercase;box-shadow:0 8px 25px rgba(10,35,30,.25)}
+  .mobile-book span{align-self:flex-end;font-size:18px;margin-top:3px}
+  .booking-page .mobile-book{display:none}
+  .cover{padding-top:91px;padding-bottom:0}.cover__issue,.cover__foot,.invitation__top,.folios__intro>.ink-rule,.field-notes__header,.table-story__meta,.days__top,.closing-ticket__top{font-size:11px;letter-spacing:.12em}
+  .cover__masthead{gap:8px;padding:27px 0 16px}.cover__masthead h1{font-size:17.3vw;letter-spacing:-.105em}.cover__aside,.cover__edition{font-size:10px;padding:0}
+  .cover__imageframe{height:63svh;min-height:460px}.cover__imageframe>img{object-position:48% center}.cover__image-note{left:14px;bottom:50px;padding:11px;width:185px}.cover__image-note p{font-size:21px;margin-top:7px}.cover__image-note span{font-size:10px}.cover__seal{width:95px;top:7%;right:9%;outline-width:3px}.cover__seal>span{font-size:20px}.cover__seal small{font-size:7px;margin-top:5px}.cover__tide{height:68px}
+  .cover__foot{min-height:110px;align-items:start;gap:10px}.cover__foot p{font-size:19px;max-width:13ch}.cover__foot .editorial-link{min-width:140px;font-size:13px;padding:10px 0;gap:5px}
+  .ink-marquee__track span{font-size:62px}
+  .invitation{padding:95px var(--space-edge) 105px}.invitation__top span:last-child,.folios__intro>.ink-rule span:last-child,.field-notes__header span:last-child,.table-story__meta span:last-child,.days__top span:last-child,.closing-ticket__top span:last-child{display:none}
+  .invitation__grid{grid-template-columns:1fr;gap:30px;padding-top:60px}.invitation__margin{display:flex;align-items:end;justify-content:space-between}.margin-number{font-size:100px}.invitation__margin p{text-align:right;margin:0}.invitation h2{font-size:clamp(46px,12vw,65px)}.invitation__body{font-size:17px;margin:25px 0 0 auto}.invitation__photo{width:78%;margin:70px 0 0 auto}.invitation__photo img{height:380px}.invitation__scribble{font-size:36px;left:0;bottom:15%}
+  .day-cycle{height:250svh}.day-cycle__inner{padding:95px 20px 95px}.day-cycle__meta span:last-child{display:none}.day-cycle__stories{min-height:53vh}.day-cycle__story h2{font-size:clamp(84px,22vw,125px)}.day-cycle__story p{font-size:16px}.day-cycle__rail{font-size:11px}.day-cycle__wash{background:linear-gradient(90deg,rgba(10,30,36,.63),rgba(10,30,36,.13)),linear-gradient(0deg,rgba(10,30,36,.4),transparent)}
+  .folios{padding:100px 20px}.folios__head{padding:60px 0 70px}.folios__head h2{font-size:clamp(66px,14vw,92px)}.folios__head p{font-size:17px;margin:0}.folio{top:80px;min-height:0;height:min(78svh,690px);display:flex;flex-direction:column;padding:18px;gap:10px;margin-bottom:32svh}.folio h3{font-size:clamp(66px,15vw,96px);margin:20px 0 9px}.folio__text>p{font-size:15px;max-width:32ch}.folio__bottom{margin-top:13px;font-size:12px;padding-top:7px}.folio__arrow{width:38px;height:38px;font-size:25px}.folio__photo{min-height:0;flex:1}.folio__photo>span{font-size:11px}.folio__watermark{font-size:190px}.folios__outro{display:block;padding-top:70px}.folios__outro>span{display:block;margin-top:20px}
+  .field-notes{padding:100px 20px 150px}.field-notes__grid{padding-top:65px;gap:12px}.field-notes h2{font-size:clamp(64px,13vw,90px)}.field-notes__heading p{font-size:17px;margin:25px 0 30px}.field-notes__image--a{margin-top:50px}.field-notes__image--b{margin-top:120px}.field-notes__image img{height:260px;border-width:5px}.field-notes__image--b img{height:200px}.field-notes__stamp{width:115px;height:115px;font-size:24px;right:10%;bottom:-90px}
+  .table-story{padding:100px 20px 0}.table-story__layout{grid-template-columns:1fr;min-height:0;padding:70px 0 100px;gap:65px}.table-story h2{font-size:clamp(85px,19vw,115px)}.table-story p{font-size:18px;margin:22px 0 27px}.table-story__media{height:400px;border-width:6px;box-shadow:13px 16px 0 rgba(23,52,60,.15)}.table-story__marquee span{font-size:70px}
+  .days{padding:100px 20px 130px}.days__intro{display:block;padding:70px 0 55px}.days h2{font-size:clamp(70px,14vw,90px)}.days__intro p{font-size:17px;margin-top:25px}.days__grid{grid-template-columns:1fr;gap:60px}.day-card:nth-child(2),.day-card:nth-child(3){margin-top:0}.day-card__image{height:430px}.day-card h3{font-size:46px}
+  .closing-ticket{padding:90px 20px 30px;min-height:0}.closing-ticket__main{display:block;padding:80px 0}.closing-ticket h2{font-size:clamp(76px,15vw,105px)}.closing-ticket p{font-size:19px}.closing-ticket__cta{width:230px;min-width:0;margin:65px 0 0 auto;padding:35px;font-size:34px}.closing-ticket__bottom{font-size:10px}.closing-ticket__bottom span:last-child{display:none}
+  .page-hero,.page-hero--short{padding-top:96px}.page-hero__content.container{padding-bottom:20px}.page-hero h1{font-size:clamp(58px,13vw,79px);margin:40px 0;line-height:.88}.page-hero__bottom{display:block}.page-hero__bottom p{margin-top:15px;font-size:14px}.page-hero__media{height:49svh;min-height:330px}
+  .editorial-intro{padding-top:100px;padding-bottom:100px}.editorial-intro p{font-size:clamp(42px,10vw,65px)}
+  .stay-entry{padding:55px 0;gap:28px}.stay-entry__copy h2{font-size:clamp(55px,12vw,76px)}.story-grid figure:nth-child(even){margin-top:0}
+  .page-section{padding:100px 0}.two-col__image{border-width:5px;box-shadow:10px 12px 0 rgba(23,52,60,.13)}
+  .booking-shell{padding-top:120px}.booking-head h1{font-size:clamp(69px,13vw,90px)}.booking-summary{border-width:6px;box-shadow:10px 12px 0 rgba(23,52,60,.12)}
+  .footer-cta h2{font-size:clamp(73px,13vw,100px)}
+  .footer-cta h2 em{font-size:.78em}
+  .footer-cta__grid>*{min-width:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .ink-marquee__track,.table-story__marquee{animation:none}
+  .day-cycle{height:auto}.day-cycle__sticky{height:auto;min-height:100svh;position:relative}.day-cycle__media{position:absolute}.day-cycle__image:not(.is-first){display:none}.day-cycle__inner{min-height:100svh}.folio{position:relative;top:auto;margin-bottom:20px;transform:none!important}
+}

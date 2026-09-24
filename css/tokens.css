@@ -1,15 +1,15 @@
 :root {
-  --color-primary: #17342e;
-  --color-secondary: #f3eee4;
+  --color-primary: #17343c;
+  --color-secondary: #f4ede0;
   --color-white: #fffaf1;
-  --color-hotels: #687f70;
-  --color-gastro: #c89c80;
-  --color-leisure: #a9c5c5;
-  --color-origins: #4f5644;
-  --color-tertiary: #c98965;
-  --color-muted: #6e7b73;
-  --font-sans: "Manrope", Arial, sans-serif;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --color-hotels: #91bbb4;
+  --color-gastro: #d48565;
+  --color-leisure: #b9d1c8;
+  --color-origins: #59645a;
+  --color-tertiary: #bf4e36;
+  --color-muted: #67756f;
+  --font-sans: "DM Sans", Arial, sans-serif;
+  --font-serif: "Bodoni Moda", Georgia, serif;
   --ease-out: cubic-bezier(.05,.76,.38,1.015);
   --expo-in: cubic-bezier(.7,0,.84,0);
   --expo-in-out: cubic-bezier(.895,0,.18,1);

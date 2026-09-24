@@ -1,7 +1,33 @@
 # Translation — Mermaid Beach Resort
 
-Status: Phase 0 ✅ · Phase 1 ✅ · Phase 2 ✅ · Phase 3 ✅ · Phase 4 ✅ · Phase 5 ✅ · Phase 6 ✅ · Phase 7 ✅
+Status: Revised translation ✅ · build ✅ · visual QA ✅
 Library: `design-dna/` (11 DNAs on 2026-09-24)
+
+## Revision 2 — The Tide Ledger
+
+The first release below is retained as a decision record. The user correctly identified that its Rosa-led calmness did not express the point of the design-DNA library: a distinctive blend of different layout and motion systems. The current site therefore uses **Da Maria Roma as the editorial base**, with HORECA Social, Krem Kanel and Flor Porto as named, visible donors. Rosa remains only in some supporting inner-page reveals; it is no longer the organizing concept.
+
+The new positioning is a hand-kept journal of a day at Mermaid: printed field notes, a living sequence of light, physical accommodation folios, overlapping photographs and an invitation that reads like a travel document. This is a redesign, not a replica of any one reference. Creative selections were made under the user's original “be creative” delegation and their later request to mix and match the extracted ideas.
+
+| Source DNA / source move | KEEP | ADAPT at Mermaid | Where |
+|---|---|---|---|
+| Da Maria Roma §01/§03, M00/M01/M02 | editorial ruled grid, serif/sans hierarchy, print-like page turn, character entry, 40s repeated type marquee | coastal field-note numbering, coral seal, enormous Mermaid masthead, page-sheet transitions | all pages; home cover, invitation, marquees |
+| HORECA Social M03 | service cards stack and recede with perspective, scale `.7`, X rotation `40°`, small Z rotation | three real-room “stay folios,” each overtaking the previous one | home stay chapter |
+| Krem Kanel M02 | organic form travels in response to scroll | warm-paper tidal SVG eats the bottom of the cover photograph; 50% travel on desktop, static on mobile | home cover |
+| Flor Porto M02 | light and copy shift as the visitor scrolls through a day | three-scene dawn / afternoon / dinner photo crossfade with a day-progress rule | home hours chapter |
+| Existing resort site | real accommodation categories, photographs, rates, contact channel | honest room folios and catalogue; enquiry rather than fictional live inventory | stays and booking |
+
+The color system is now ink `#17343c`, warm paper `#f4ede0`, coral `#bf4e36`, sea-glass and sun-clay. Bodoni Moda carries display, DM Sans carries body, and Barlow Condensed carries issue metadata and actions. The supplied vector logo remains the consistent global brand mark, rather than becoming a decorative one-off. The four generated campaign images remain atmospheric concepts; actual room images stay attached to room offers.
+
+The architecture is still six pages, but the homepage is a longer journal rather than the prior linear luxury template: printed cover → oversized type strip → invitation → changing hours → stacked room folios → dark field scrapbook → dining spread → uneven day postcards → oversized enquiry seal. The inner pages carry the paper/ink typographic system, while the booking form is a numbered travel document with an updating stay preview. One GSAP/ScrollTrigger runtime and one Lenis instance drive the motion. A reduced-motion path disables scroll choreography and keeps all content available.
+
+### Revision QA
+
+- Inspected the extracted DNA text and visual captures for Da Maria Roma, HORECA Social, Krem Kanel and Flor Porto, and mapped each named donor to an implemented section or motion rule.
+- Reviewed viewport captures of the dawn/afternoon/dinner transitions, all three folio states, field scrapbook, dining spread, postcard section and closing enquiry at 1440px and 390px. Mobile CTA was reduced from a full-width overlay to a compact seal; the organic tide motion is suppressed on small screens.
+- Rechecked the six-page site in browser at 1440px and 390px for page errors, image loads, overflow, stay filtering and booking estimate/capacity feedback. The enquiry is still sent through a prefilled WhatsApp message, not a live reservation.
+
+## Initial release record — The Breathing Coast
 
 ## Idea
 Use the translator skill to build and design a brand redesign for https://mermaidbeachresort.net/. Create a logo and use it. Take images from the site and generate new ones for an Awwwards-level visual aesthetic. Make an organized, creative, multi-page visual storytelling site with a visually aesthetic booking solution, GSAP, Lenis, motion, visual positioning and color. The user delegated creative choices with “be creative.” For generated imagery, the user accepted the available built-in image tool when a selectable GPT Image 2.5 Sunburst path was unavailable.
