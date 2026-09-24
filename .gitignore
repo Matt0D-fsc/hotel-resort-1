@@ -1,0 +1,10 @@
+# Research captures and contact sheets are local working material, not site assets.
+/research/
+
+# Keep optimized web delivery assets in Git; retain high-resolution masters locally.
+/assets/img/*-master.png
+
+# Local environment and editor files
+.DS_Store
+Thumbs.db
+.vscode/
