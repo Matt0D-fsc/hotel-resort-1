@@ -1,7 +1,17 @@
 # Translation — Mermaid Beach Resort
 
-Status: Revised translation ✅ · build ✅ · visual QA ✅
+Status: Rosa-led translation ✅ · build ✅ · visual QA ✅
 Library: `design-dna/` (11 DNAs on 2026-09-24)
+
+## Revision 3 — Rosa Cinema (current)
+
+The user explicitly selected Rosa Hotels as the primary layout and motion system, superseding Revision 2's multi-source Tide Ledger. The Rosa DNA's §01 circular film, §02 panoramic property selector, §03–04 asymmetric imagery, §05 dark statement, §07 sensory dining and §08 draggable rail are now the organizing sequence. Navigation uses the small centered logo and a compact reserve pill after scroll. Motion follows M01 circular expansion, M02 staggered type, M03 image swaps, M04 shallow independent photo parallax, M05 scroll-linked character emphasis and M07 drag/scroll rail. The 6-page booking spine remains intact.
+
+The circle begins below the white opening view and expands to a true full-viewport mask while a muted, native MP4 plays inside. The 20-second source is the user-supplied Mermaid Beach Resort TVC, cut from 00:08–00:28. This avoids exposing YouTube controls or branding, but does not assert video ownership; production rights need resort confirmation. An optimized poster image remains a static fallback. Mobile receives the same visual sequence with a shorter scroll distance; reduced-motion users see a non-playing circular still.
+
+The palette is Rosa's mineral white / `#f0e8e3` shell / `#1c2126` ink / `#5f6754` olive. Type reproduces the reference's contrast of very light sans statements and italic serif pivots with Jost and Cormorant Garamond. Rosa's exact PP Fragment files require a public web license and were not redistributed. The existing original Mermaid wordmark and logo remain in use.
+
+The user's explicit Rosa request is the current creative choice; prior concepts remain below only as a history of decisions. Review on 2026-09-24 covered desktop/mobile first folds and scroll states, all six page loads, no horizontal overflow or broken images, stays filtering and booking calculations. The booking action continues as a WhatsApp enquiry—not a fabricated live reservation.
 
 ## Revision 2 — The Tide Ledger
 

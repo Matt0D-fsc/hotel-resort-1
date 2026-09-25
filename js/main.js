@@ -9,9 +9,11 @@
     ["Our story", "story.html", "story"],
   ];
   const navLinks = nav.map(([label, href, key]) => `<a href="${href}" ${page === key ? 'aria-current="page"' : ""}>${label}</a>`).join("");
+  const leftLinks = nav.slice(0, 2).map(([label, href, key]) => `<a href="${href}" ${page === key ? 'aria-current="page"' : ""}>${label}</a>`).join("");
+  const rightLinks = nav.slice(2).map(([label, href, key]) => `<a href="${href}" ${page === key ? 'aria-current="page"' : ""}>${label}</a>`).join("");
   const brand = `<a class="brand" href="index.html" aria-label="Mermaid Beach Resort, home"><img class="brand__mark" src="assets/logo-mark.svg" alt=""><span class="brand__text">Mermaid<small>BEACH RESORT</small></span></a>`;
 
-  root.innerHTML = `${brand}<nav class="desktop-nav" aria-label="Main navigation">${navLinks}</nav><div class="header-actions"><a class="button header-book" href="book.html">Request a stay <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span>Menu</span><span class="menu-toggle__lines"><span></span><span></span></span></button></div>`;
+  root.innerHTML = `<nav class="desktop-nav desktop-nav--left" aria-label="Stays and experiences">${leftLinks}</nav>${brand}<div class="header-actions"><nav class="desktop-nav desktop-nav--right" aria-label="Dining and story">${rightLinks}</nav><a class="button header-book" href="book.html">Request a stay <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span>Menu</span><span class="menu-toggle__lines"><span></span><span></span></span></button></div>`;
   const hasVisualHero = Boolean(document.querySelector(".hero__sticky"));
   root.classList.add("site-header");
   if (hasVisualHero) root.classList.add("is-hero");

@@ -1,38 +1,36 @@
-# Mermaid Beach Resort — The Tide Ledger
+# Mermaid Beach Resort — Rosa-led redesign
 
-A six-page, static, responsive brand site for Mermaid Beach Resort in Cox's Bazar. Open `index.html` through a local HTTP server; the project has no build step.
+A six-page, static, responsive brand concept for Mermaid Beach Resort in Cox's Bazar. No build step is required. Serve the project directory locally:
 
 ```powershell
 python -m http.server 8765 --bind 127.0.0.1
 ```
 
-Run the command from the project directory.
-
-Then visit `http://127.0.0.1:8765/`.
+Then open `http://127.0.0.1:8765/`.
 
 ## Pages
 
-- `index.html` — editorial cover, changing day sequence, stacked stay folios and closing invitation
-- `stays.html` — seven accommodations, filters, actual resort room photos and published starting rates
-- `experiences.html` — shore, garden, making and water stories
-- `dining.html` — Breakfast Club, Eat the Time and local food story
-- `story.html` — material, landscape and brand narrative
+- `index.html` — circular resort film, panoramic stay selection, photographic collage, dining, experiences, closing invitation
+- `stays.html` — seven accommodations, filters, property photos and published starting rates
+- `experiences.html` — shore, garden and activity stories
+- `dining.html` — restaurants and local food story
+- `story.html` — place, architecture and brand narrative
 - `book.html` — date, guest, stay and contact form with a live planning estimate
 
-The booking form validates dates, required contact details and listed adult occupancy, then opens a prefilled WhatsApp request to the resort's published reservations number. It is an enquiry, not a live inventory system, confirmed reservation or payment flow. The resort must confirm final availability and pricing. For production instant booking, connect a property-management or booking-engine API and replace the WhatsApp handoff.
+The booking form validates dates, required contact details and listed adult occupancy, then opens a prefilled WhatsApp request to the resort's published reservations number. It is an enquiry, not live availability, confirmed booking or payment. An instant-booking release needs a property-management/booking-engine API.
 
 ## Design and media
 
-The original vector logo is in `assets/logo-mark.svg` and `assets/logo-lockup.svg`. Actual property imagery from the public resort site appears in accommodation cards and editorial details. Four AI-generated campaign concepts create the atmosphere; they are visually distinct from authentic accommodation listings. Optimized WebP files are used on the site and high-resolution generated masters are retained in `assets/img/`.
+This revision follows the user-selected [Rosa Hotels](https://rosahotels.dgrees.studio/) direction: light editorial display, an italic serif countervoice, mineral white and olive, a scroll-expanding circular film, image-led rooms, asymmetric photography and one dark chapter. The implementation mapping is in `translation.md`.
 
-The available built-in image generation tool was used with the user's approval. It did not expose a selectable GPT Image 2.5 Sunburst model, so this project does not claim that model. Art direction for the four concepts: a timber villa among palms at dawn; reflective tidal shoreline; local fish meal by the beach; quiet Bay of Bengal boat scene. The translation rationale is in `translation.md`.
+The circular film is a self-hosted, muted, 20-second excerpt starting at 8 seconds from the [Mermaid Beach Resort TVC supplied by the user](https://youtu.be/0AWeN0b9PgI). It has no YouTube embed, controls or audio. Confirm footage usage rights with the resort before production deployment. Actual resort photos appear in room listings and supporting editorial sections; generated campaign concepts are atmosphere, not factual pictures of specific rooms.
 
-The revised visual language mixes four extracted design DNAs: Da Maria Roma's printed editorial system, HORECA Social's receding card stack, Krem Kanel's elastic organic edge and Flor Porto's changing light. The implementation and precise translation choices are documented in `translation.md`.
+The original vector logo is `assets/logo-mark.svg` / `assets/logo-lockup.svg`. Rosa uses proprietary PP Fragment fonts. This public concept uses Jost and Cormorant Garamond to reproduce the light-sans/italic-serif hierarchy without distributing unlicensed font binaries. Replace them with licensed PP Fragment files if exact typography is approved.
 
-Motion uses vendored GSAP/ScrollTrigger and Lenis. Lenis is desktop-only and disabled for visitors requesting reduced motion. The core layout and content work without animation libraries. Google Fonts are optional and have local font-family fallbacks.
+GSAP/ScrollTrigger and Lenis are vendored. Lenis runs on desktop only; scroll choreography is disabled for reduced-motion visitors. Core content remains accessible without animation libraries.
 
 ## Verification
 
-Browser review was run on 2026-09-24 at 1440px and 390px. All six pages returned 200 with no console exceptions, broken loaded images or horizontal overflow at those widths. The mobile menu, stay filters, URL preselection, estimate and WhatsApp request handoff were also exercised.
+The six pages were tested at 1440px and 390px on 2026-09-24: HTTP 200, no page exceptions, broken images or horizontal overflow. Visual captures covered the circular film's intermediate and full-bleed states, major home sections and mobile page folds. Stay filtering, booking estimate and capacity warnings were exercised.
 
-This is a brand/website concept, not an official deployment. Confirm photo usage rights, resort copy, tariffs, policies and reservation channel with the property before publishing.
+This remains a design concept, not an official deployment. Confirm imagery rights, copy, rates, policies and reservation channel with the property before publishing.
